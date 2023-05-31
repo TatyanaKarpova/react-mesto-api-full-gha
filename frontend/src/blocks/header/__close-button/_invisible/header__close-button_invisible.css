@@ -1,0 +1,5 @@
+.header__close-button_invisible {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+}

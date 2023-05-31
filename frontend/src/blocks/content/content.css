@@ -1,0 +1,21 @@
+.content {
+    margin: 40px auto 67px;
+    display: grid;
+    row-gap: 50px;
+    flex: 1;
+}
+
+@media screen and (max-width: 1024px) {
+    .content {
+        margin-top: 41px;
+        margin-bottom: 57.5px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .content {
+        margin-top: 42px;
+        margin-bottom: 48px;
+        row-gap: 36px;
+    }
+}

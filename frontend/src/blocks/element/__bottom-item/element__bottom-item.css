@@ -1,0 +1,8 @@
+.element__bottom-item {
+    margin: 0;
+    background-color: #fff;
+    padding: 22px 20px 22px 21px;
+    display: flex;
+    justify-content: space-between;
+}
+

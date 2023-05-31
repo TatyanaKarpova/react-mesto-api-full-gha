@@ -1,0 +1,57 @@
+.popup__item {
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    border: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    width: 358px;
+    padding: 0 0 9px 0;
+}
+
+@media screen and (max-width: 768px) {
+    .popup__item {
+        width: 238px;
+    }
+}
+
+.popup__item:first-of-type{
+    margin-bottom: 29px;
+}
+
+.popup__item:focus {
+    outline-color: #87CEFA;
+  }
+
+.popup__item::placeholder {
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.popup__item::-ms-input-placeholder {
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.popup__item::-webkit-input-placeholder {
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.popup__item::-moz-placeholder {
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+}

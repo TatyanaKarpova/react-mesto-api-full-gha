@@ -1,0 +1,28 @@
+.login__field {
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    width: 358px;
+    padding: 0 0 13px;
+    margin: 0;
+    border: 0;
+    border-bottom: 2px solid #CCCCCC;
+    box-sizing: border-box;
+    background-color: transparent;
+    color: #CCCCCC;
+}
+
+.login__field::placeholder {
+    color: #CCCCCC;
+}
+
+.login__field:first-of-type {
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width: 768px) {
+    .login__field {
+        width: 260px;
+    }
+}

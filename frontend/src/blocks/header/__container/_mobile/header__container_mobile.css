@@ -1,0 +1,5 @@
+@media screen and (max-width: 768px) {
+    .header__container_mobile {
+        flex-direction: column-reverse;
+    }    
+}

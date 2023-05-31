@@ -1,0 +1,18 @@
+.popup__registration-heading {
+    padding: 32px 36px 0 36px;
+    margin: 0 0 60px 0;
+    text-align: center;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;
+}
+
+@media screen and (max-width: 768px) {
+    .popup__registration-heading {
+        padding: 40px 18px 0 18px;
+        margin: 0 0 50px 0;
+        font-size: 20px;
+        line-height: 24px;
+    }    
+}

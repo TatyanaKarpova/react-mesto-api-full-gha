@@ -1,0 +1,17 @@
+.header__login {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #FFFFFF;
+    margin: 0 24px 0 0;
+    display: block;
+    align-self: flex-end;
+}
+
+@media screen and (max-width: 768px) {
+    .header__login {
+        margin: 0;
+        font-weight: 500;
+        align-self: center;
+    }
+}

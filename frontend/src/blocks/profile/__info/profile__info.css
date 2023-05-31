@@ -1,0 +1,20 @@
+.profile__info {
+    display: grid;
+    grid-template-columns: repeat(2, fit-content(70%));
+    grid-template-areas:
+    "title edit-button"
+    "subtitle .";
+    gap: 16px 18px;
+}
+
+@media screen and (max-width: 1024px) {
+    .profile__info {
+        grid-template-columns: repeat(2, fit-content(100%));
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .profile__info {
+        gap: 14px 10px;
+    }
+}
