@@ -36,8 +36,8 @@
 
 ## Ссылки на проект
 
-IP-адрес: 158.160.44.124
+[IP-адрес](158.160.44.124)
 
-Frontend: https://mesto.react.15.nomoredomains.monster
+[Frontend](https://mesto.react.15.nomoredomains.monster)
 
-Backend: https://api.mesto.react.15.nomoredomains.monster
+[Backend](https://api.mesto.react.15.nomoredomains.monster)
