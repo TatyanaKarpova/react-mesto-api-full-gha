@@ -40,4 +40,4 @@ IP 158.160.44.124
 
 Frontend https://mesto.react.15.nomoredomains.monster
 
-Backend https://api.mesto.react.15.nomoredomains.monster
+Backend https://api.mesto.react.15.nomoredomains.monsters
