@@ -36,7 +36,7 @@
 
 ## Ссылки на проект
 
-IP 158.160.44.124
+IP 51.250.10.35
 
 Frontend https://mesto.react.15.nomoredomains.monster
 
