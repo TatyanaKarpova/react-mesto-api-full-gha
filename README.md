@@ -41,4 +41,4 @@ IP 51.250.10.35
 
 Frontend https://mesto.react.15.nomoredomains.monster
 
-Backend https://api.mesto.react.15.nomoredomains.monsters
+Backend https://api.mesto.react.15.nomoredomains.monster
