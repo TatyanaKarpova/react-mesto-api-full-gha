@@ -41,4 +41,4 @@ class Auth {
     }
   }
   
-  export const auth = new Auth("https://auth.nomoreparties.co");
+  export const auth = new Auth("https://api.mesto.react.15.nomoredomains.monster");

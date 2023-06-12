@@ -72,7 +72,8 @@ function App() {
   }, [isOpen]);
 
   useEffect(() => {
-    api
+    if (loggedIn) {
+      api
       .getUserProfileInfo()
       .then((res) => {
         setCurrentUser(res);
@@ -84,7 +85,8 @@ function App() {
         setCards(res);
       })
       .catch((err) => console.log(err));
-  }, []);
+    }
+  }, [loggedIn]);
 
   useEffect(() => {
     const jwt = localStorage.getItem("jwt");
