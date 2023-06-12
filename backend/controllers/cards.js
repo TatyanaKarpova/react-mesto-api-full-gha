@@ -2,6 +2,7 @@ const Card = require('../models/card');
 const NotFoundError = require('../errors/NotFoundError');
 const ForbiddenError = require('../errors/ForbiddenError');
 const InternalServerError = require('../errors/InternalServerError');
+const BadRequestError = require('../errors/BadRequestError');
 
 module.exports.createCard = (req, res, next) => {
   const owner = req.user._id;
@@ -9,7 +10,13 @@ module.exports.createCard = (req, res, next) => {
 
   Card.create({ name, link, owner })
     .then((card) => res.send({ data: card }))
-    .catch(next);
+    .catch((err) => {
+      if (err.name === 'ValidationError') {
+        next(new BadRequestError('Переданы некорректные данные при создании карточки'));
+      } else {
+        next(err);
+      }
+    });
 };
 
 module.exports.getCards = (req, res, next) => {
@@ -29,7 +36,8 @@ module.exports.deleteCard = (req, res, next) => {
         next(new ForbiddenError('Недостаточно прав на удаление карточки'));
       } else {
         card.remove()
-          .then(() => res.send({ data: card }));
+          .then(() => res.send({ data: card }))
+          .catch(next);
       }
     })
     .catch(next);

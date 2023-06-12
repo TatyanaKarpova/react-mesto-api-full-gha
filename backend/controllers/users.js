@@ -32,7 +32,8 @@ module.exports.createUser = (req, res, next) => {
           }
           next(new InternalServerError('На сервере произошла ошибка'));
         });
-    });
+    })
+    .catch(next);
 };
 
 module.exports.getUsers = (req, res, next) => {
@@ -69,7 +70,13 @@ module.exports.updateUser = (req, res, next) => {
   User.findByIdAndUpdate(req.user._id, { name, about }, { new: true, runValidators: true })
     .orFail(() => { throw new NotFoundError('По переданному id отсутствуют данные'); })
     .then((user) => res.send({ data: user }))
-    .catch(next);
+    .catch((err) => {
+      if (err.name === 'ValidationError') {
+        next(new BadRequestError('Переданы некорректные данные при обновлении имени и описания профиля'));
+      } else {
+        next(err);
+      }
+    });
 };
 
 module.exports.updateAvatar = (req, res, next) => {
@@ -78,7 +85,13 @@ module.exports.updateAvatar = (req, res, next) => {
   User.findByIdAndUpdate(req.user._id, { avatar }, { new: true, runValidators: true })
     .orFail(() => { throw new NotFoundError('По переданному id отсутствуют данные'); })
     .then((user) => res.send(user))
-    .catch(next);
+    .catch((err) => {
+      if (err.name === 'ValidationError') {
+        next(new BadRequestError('Переданы некорректные данные при обновлении аватара'));
+      } else {
+        next(err);
+      }
+    });
 };
 
 module.exports.login = (req, res, next) => {
