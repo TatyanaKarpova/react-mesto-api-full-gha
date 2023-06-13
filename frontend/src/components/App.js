@@ -90,10 +90,10 @@ function App() {
   }, [loggedIn]);
 
   useEffect(() => {
-    const token = localStorage.getItem("jwt");
-    if (token) {
+    const jwt = localStorage.getItem("jwt");
+    if (jwt) {
       auth
-        .checkToken(token)
+        .checkToken(jwt)
         .then((userData) => {
           if (userData) {
             setLoggedIn(true);
