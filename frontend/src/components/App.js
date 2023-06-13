@@ -73,6 +73,7 @@ function App() {
 
   useEffect(() => {
     if (loggedIn) {
+      console.log('test-loggedIn-useEffect')
       api
       .getUserProfileInfo()
       .then((res) => {
@@ -89,10 +90,10 @@ function App() {
   }, [loggedIn]);
 
   useEffect(() => {
-    const jwt = localStorage.getItem("jwt");
-    if (jwt) {
+    const token = localStorage.getItem("jwt");
+    if (token) {
       auth
-        .checkToken(jwt)
+        .checkToken(token)
         .then((userData) => {
           if (userData) {
             setLoggedIn(true);
