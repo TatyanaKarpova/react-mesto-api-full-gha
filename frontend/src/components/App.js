@@ -91,6 +91,7 @@ function App() {
 
   useEffect(() => {
     const jwt = localStorage.getItem("jwt");
+    api.setToken(jwt); /// добавила тут setToken
     if (jwt) {
       auth
         .checkToken(jwt)
@@ -173,6 +174,7 @@ function App() {
           setUserEmail(email);
           setLoggedIn(true);
           localStorage.setItem("jwt", userData.jwt);
+          api.setToken(userData.jwt); /// добавила тут setToken
           navigate("/");
         }
       })
@@ -185,6 +187,7 @@ function App() {
 
   function handleLogoutUser() {
     localStorage.removeItem("jwt");
+    /*api.setToken(jwt)*///не нужно?
     setLoggedIn(false);
     setIsLoginSuccess(false);
     navigate("/sign-in");
