@@ -41,4 +41,5 @@ class Auth {
     }
   }
   
-  export const auth = new Auth("https://api.mesto.react.15.nomoredomains.monster");
+  /*export const auth = new Auth("https://api.mesto.react.15.nomoredomains.monster");*/
+  export const auth = new Auth("http://localhost:3001");

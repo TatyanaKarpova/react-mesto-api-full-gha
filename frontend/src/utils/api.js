@@ -73,7 +73,7 @@ class Api {
   }
 
   changeLikeCardStatus(cardId, isLiked) {
-    this._likedCard = fetch(`${this._url}/cards/likes/${cardId}`, {
+    this._likedCard = fetch(`${this._url}/cards/${cardId}/likes/`, {
       method: isLiked ? "PUT" : "DELETE",
       headers: this._headers,
     }).then(this._checkResponse);
@@ -101,9 +101,10 @@ class Api {
 }
 
 export const api = new Api({
-  url: "https://api.mesto.react.15.nomoredomains.monster",
+  /*url: "https://api.mesto.react.15.nomoredomains.monster",*/
+  url: "http://localhost:3001",
   headers: {
-    /*authorization: "bbfe3381-78a1-420d-846d-3c7932cfb849",*/ //убираем токен
+    /*authorization: "bbfe3381-78a1-420d-846d-3c7932cfb849",*/ //убираем токен?
     "Content-Type": "application/json",
   },
 });
