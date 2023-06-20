@@ -101,10 +101,8 @@ class Api {
 }
 
 export const api = new Api({
-  /*url: "https://api.mesto.react.15.nomoredomains.monster",*/
-  url: "http://localhost:3001",
+  url: "https://api.mesto.react.15.nomoredomains.monster",
   headers: {
-    /*authorization: "bbfe3381-78a1-420d-846d-3c7932cfb849",*/ //убираем токен?
     "Content-Type": "application/json",
   },
 });

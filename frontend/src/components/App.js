@@ -90,7 +90,7 @@ function App() {
 
   useEffect(() => {
     const jwt = localStorage.getItem("jwt");
-    api.setToken(jwt); ///
+    api.setToken(jwt);
     if (jwt) {
       auth
         .checkToken(jwt)
@@ -127,7 +127,7 @@ function App() {
     api
       .updateAvatar(newAvatar)
       .then((res) => {
-        setCurrentUser(res.data);
+        setCurrentUser(res);
         closeAllPopups();
       })
       .catch((err) => console.log(err))
@@ -140,7 +140,7 @@ function App() {
     api
       .addNewCards(newPlace.name, newPlace.link)
       .then((res) => {
-        setCards([res, ...cards]);
+        setCards([res.data, ...cards]);
         closeAllPopups();
       })
       .catch((err) => console.log(err))
@@ -173,7 +173,7 @@ function App() {
           setUserEmail(email);
           setLoggedIn(true);
           localStorage.setItem("jwt", userData.jwt);
-          api.setToken(userData.jwt); ///
+          api.setToken(userData.jwt);
           navigate("/");
         }
       })
@@ -186,15 +186,13 @@ function App() {
 
   function handleLogoutUser() {
     localStorage.removeItem("jwt");
-    /*api.setToken(jwt)*///не нужно?
     setLoggedIn(false);
     setIsLoginSuccess(false);
     navigate("/sign-in");
   }
 
   function handleCardLike(card) {
-    const isLiked = card.likes.some((i) => i._id === currentUser._id);
-    console.log(currentUser);
+    const isLiked = card.likes.some((i) => i === currentUser._id);
 
     api
       .changeLikeCardStatus(card._id, !isLiked)
